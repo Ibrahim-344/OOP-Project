@@ -34,4 +34,4 @@ int main() {
 }
 
  // Output
- // Name: John
+ // Name: Ibrahim
