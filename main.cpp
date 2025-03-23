@@ -1,24 +1,37 @@
 #include<iostream>
 using namespace std;
-int main()
-{
-    int n;
-    cout<<"Enter the number of elements in the array: ";
-    cin>>n;
-    int arr[n];
-    cout<<"Enter the elements of the array: ";
-    for(int i=0;i<n;i++)
-    {
-        cin>>arr[i];
-    }
-    int max=arr[0];
-    for(int i=1;i<n;i++)
-    {
-        if(arr[i]>max)
-        {
-            max=arr[i];
+
+class Student {
+    public:
+        string name;
+        int age;
+        int roll_no;
+        void display() {
+            cout << "Name: " << name << endl;
+            cout << "Age: " << age << endl;
+            cout << "Roll No: " << roll_no << endl;
         }
-    }
-    cout<<"The maximum element in the array is: "<<max;
+};
+void display(Student s) {
+    cout << "Name: " << s.name << endl;
+    cout << "Age: " << s.age << endl;
+    cout << "Roll No: " << s.roll_no << endl;
+}
+void display(Student *s) {
+    cout << "Name: " << s->name << endl;
+    cout << "Age: " << s->age << endl;
+    cout << "Roll No: " << s->roll_no << endl;
+}
+int main() {
+    Student s1;
+    s1.name = "Ibrahim";
+    s1.age = 20;
+    s1.roll_no = 101;
+    s1.display();
+    display(s1);
+    display(&s1);
     return 0;
 }
+
+ // Output
+ // Name: John
